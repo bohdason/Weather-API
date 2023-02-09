@@ -1,0 +1,153 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 1;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #4f7483;
+  scroll-behavior: smooth;
+
+
+
+
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+.wrapper {
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+.head__title {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin: 80px 0 30px 0;
+  color: antiquewhite;
+}
+
+.weather {
+  background-color: #7ffff9;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 550px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 100px;
+  background-image: url(img/nature.webp);
+  background-size: cover;
+  display: none;
+}
+
+@media (max-width: 400px) {     
+
+  .weather{
+      background-size: auto;
+  }
+}
+
+.weather.show {
+  display: block;
+}
+
+.show__btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 36px;
+  border-radius: 37px;
+
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  color: #421111;
+  background: #FF7B47;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s linear, color .2s linear;
+}
+
+.show__btn:hover {
+  background: #1ea883;
+}
+
+.header__common {
+  text-align: center;
+}
+
+.weather__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather__loading img {
+  max-width: 50px;
+}
+
+.weather__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.weather__main {}
+
+.weather__city {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.weather__status {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.weather__temp {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.weather__feels-like {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.wind-speed {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.weather__info {
+  text-align: center;
+}
