@@ -58,9 +58,9 @@ let weather = {
 
     document.querySelector(".weather__status").innerText = description;
 
-    document.querySelector(".weather__temp").innerText = Math.round(temp) + "°C";
+    document.querySelector(".weather__temp").innerText = "Current temperature:  " +  Math.round(temp) + "°C";
 
-    document.querySelector(".weather__feels-like").innerText = Math.round(feels_like) + "°C";
+    document.querySelector(".weather__feels-like").innerText = "Fills like:  " +  Math.round(feels_like) + "°C";
 
 
     // document.querySelector(".humidity").innerText =
