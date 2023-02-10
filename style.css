@@ -8,7 +8,7 @@ body {
   line-height: 1;
   font-weight: 400;
   font-style: normal;
-  background-color: #4f7483;
+  background-color: #4f7483d0;
   scroll-behavior: smooth;
 
 
@@ -59,15 +59,15 @@ p {
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 100px;
-  background-image: url(img/nature.webp);
+  background-image: url(img/wild.jpg);
   background-size: cover;
   display: none;
 }
 
-@media (max-width: 400px) {     
+@media (max-width: 400px) {
 
-  .weather{
-      background-size: auto;
+  .weather {
+    background-size: auto;
   }
 }
 
@@ -80,7 +80,7 @@ p {
   vertical-align: top;
   padding: 10px 36px;
   border-radius: 37px;
-
+  font-weight: 500;
   font-size: 20px;
   font-weight: 600;
   margin-right: 10px;
@@ -143,11 +143,58 @@ p {
   margin-bottom: 15px;
 }
 
-.wind-speed {
+.wind__speed {
   font-size: 20px;
   font-weight: 600;
 }
 
 .weather__info {
   text-align: center;
+}
+
+.search_area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search_area button {
+  display: inline-block;
+  vertical-align: top;
+  padding: 8px 13px;
+  border-radius: 37px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 10px;
+  color: #421111;
+  background: #FF7B47;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s linear, color .2s linear;
+  margin-left: 10px;
+}
+
+.search_area button:hover {
+  background: #1ea883;
+}
+
+.search_bar {
+  border: 1px solid #000;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #7c7c7c2b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+ 
+
+}
+
+input::placeholder {
+  color: #000;
+  opacity: 0.5;
 }
