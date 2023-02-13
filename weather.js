@@ -4,36 +4,21 @@
 /***BTN click ******/
 
 function weatherModal() {
-    const openBtn = document.querySelector(".show__btn");
-    const widget = document.querySelector(".weather");
+  const openBtn = document.querySelector(".show__btn");
+  const widget = document.querySelector(".weather");
 
-    openBtn.addEventListener("click", function(){
-        widget.classList.toggle("show");
-    });
-
-
+  openBtn.addEventListener("click", function () {
+    widget.classList.toggle("show");
+  });
 }
 weatherModal();
-
-
-
-
-
-
-
-
-
-
-
 
 
 let weather = {
   apiKey: "df7b2984d9f3d7d9aae941faf591bc2e",
   fetchWeather: function (city) {
     fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=" +
-      city +
-      "&units=metric&appid=" +
+      "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" +
       this.apiKey
     )
       .then((response) => {
@@ -58,9 +43,9 @@ let weather = {
 
     document.querySelector(".weather__status").innerText = description;
 
-    document.querySelector(".weather__temp").innerText = "Current temperature:  " +  Math.round(temp) + "°C";
+    document.querySelector(".weather__temp").innerText = "Current temperature:  " + Math.round(temp) + "°C";
 
-    document.querySelector(".weather__feels-like").innerText = "Fills like:  " +  Math.round(feels_like) + "°C";
+    document.querySelector(".weather__feels-like").innerText = "Fills like:  " + Math.round(feels_like) + "°C";
 
 
     // document.querySelector(".humidity").innerText =
@@ -83,10 +68,10 @@ document.querySelector(".search_btn").addEventListener("click", function () {
 });
 
 document.querySelector(".search_bar").addEventListener("keyup", function (event) {
-    if (event.key == "Enter") {
-      weather.search();
-    }
-  });
+  if (event.key == "Enter") {
+    weather.search();
+  }
+});
 
 weather.fetchWeather("Kyiv");
 
