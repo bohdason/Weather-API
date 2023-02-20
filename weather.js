@@ -14,21 +14,20 @@ function weatherModal() {
 weatherModal();
 
 
-let weather = {
+const weather = {
+
   apiKey: "df7b2984d9f3d7d9aae941faf591bc2e",
-  fetchWeather: function (city) {
-    fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" +
-      this.apiKey
-    )
-      .then((response) => {
-        if (!response.ok) {
-          alert("No weather found.");
-          throw new Error("No weather found.");
-        }
-        return response.json();
-      })
-      .then((data) => this.displayWeather(data));
+  fetchWeather: async function (city) {
+    try {
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`);
+      if (!response.ok) {
+        throw new Error("No weather found.");
+      }
+      const data = await response.json();
+      this.displayWeather(data);
+    } catch (error) {
+      alert(error.message);
+    }
   },
   displayWeather: function (data) {
     const { name } = data;
@@ -59,7 +58,16 @@ let weather = {
     //   "url('https://source.unsplash.com/1600x900/?" + name + "')";
   },
   search: function () {
-    this.fetchWeather(document.querySelector(".search_bar").value);
+    // this.fetchWeather(document.querySelector(".search_bar").value);
+    const searchInput = document.querySelector(".search_bar");
+    const searchValue = searchInput.value.trim();
+    if (searchValue) {
+      this.fetchWeather(searchValue);
+      searchInput.value = "";
+    } else {
+      alert ("Please enter a city name");
+    }
+
   },
 };
 
