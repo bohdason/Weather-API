@@ -25,6 +25,7 @@ const weather = {
       }
       const data = await response.json();
       this.displayWeather(data);
+      console.log(data);
     } catch (error) {
       alert(error.message);
     }
