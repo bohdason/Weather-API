@@ -13,17 +13,23 @@ function weatherModal() {
 }
 weatherModal();
 
+let cachedWeatherData = {};
 
 const weather = {
-
   apiKey: "df7b2984d9f3d7d9aae941faf591bc2e",
   fetchWeather: async function (city) {
     try {
+      let data;
+      if (cachedWeatherData[city]) {
+        data = cachedWeatherData[city];
+      } else {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`);
       if (!response.ok) {
         throw new Error("No weather found.");
       }
-      const data = await response.json();
+       data = await response.json();
+       cachedWeatherData[city] = data;
+    }
       this.displayWeather(data);
       console.log(data);
     } catch (error) {
